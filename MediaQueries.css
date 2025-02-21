@@ -24,7 +24,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: relative;
+  & img {
+    width: 50px;
+    height: 50px;
+    margin: 1rem;
+    border-radius: 100%;
+    cursor: pointer;
+    border: aqua 2px solid;
+  }
+  & img:hover {
+    opacity: 0.66;
+  }
   & .flex{
       width: 100%;
       display: flex;
@@ -33,14 +44,14 @@ header {
       margin: 0;
 
       & a {
+          font-family: "Pixelify Sans", serif;
           color: aqua;
           text-decoration: none;
           cursor: pointer;
-          font-size: 1rem;
-          padding: 0px 10px;
-          font-weight: bolder;
+          font-size: 1.5rem;
+          /* padding: 0px 10px; */
+          font-weight: 700;
           text-transform: uppercase;
-
       }
       & a:hover {
           color: white;
@@ -95,9 +106,12 @@ main {
     width: 70%;
 
     & h1#h1 {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Pixelify Sans", serif;
       font-size: 3rem;
       text-align: center;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
     }
 
     & #container {
@@ -118,7 +132,7 @@ main {
       & .content {
         text-align: center;
         & p {
-          margin-left: 10%;
+          /* margin-left: 10%; */
           text-align: left;
         }
         & button {
@@ -126,11 +140,15 @@ main {
           padding: 8px;
           border: none;
           cursor: pointer;
-          margin-top: 8px;
-
-          & a {
-            color: #fff;
-          }
+          margin-top: 1rem;
+          border-radius: 8px;
+          color: aqua;
+          font-weight: bolder;
+          text-transform: uppercase;
+        }
+        & button:hover{
+          background-color: aqua;
+          color: #333;
         }
       }
     }
@@ -138,18 +156,24 @@ main {
 
   & aside {
     width: 30%;
-    background-color: aqua;
+    background-color: #333;
     border: #333 1px solid;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.5rem;
+    /* justify-content: center; */
+    padding: 1rem;
+    & h2#h2 {
+      font-family: "Pixelify Sans", serif;
+      text-transform: uppercase;
+      color: greenyellow;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
     & p {
+      color: aqua;
       font-size: 1rem;
       text-align: start;
-      padding: 1rem;
+      font-weight: 100;
     }
   }
 }
@@ -187,12 +211,13 @@ footer {
 @media only screen and (max-width:768px) {
   main {
     flex-direction: column;
+    width: 100%;
 
     & .main-content {
       width: 100%;
       
       & h1#h1 {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
     & aside {
@@ -202,21 +227,27 @@ footer {
   }
 }
 
-@media only screen and (max-width:576px) {
+@media only screen and (max-width:600px) {
   header {
     & .flex {
         & nav {
+            & input#burgermenu:not(:checked) ~ ul#menu {
+              height: 0;
+            }
             & input#burgermenu:checked ~ ul#menu {
               position: absolute;
               display: flex;
               text-align: center;
               flex-direction: column;
+              align-items: center;
               width: 66%;
               height: 100vh;
               background-color: #333;
               right: 0;
-              top: 60px;
-              align-items: center;
+              top: 82px;
+              z-index: 100;
+              height: calc(100vh - 33vh);
+              overflow: hidden;
             }
             & input#burgermenu {
               display: none;
@@ -232,7 +263,7 @@ footer {
             }
             & #menu-mobile > label {
               z-index: 10;
-              display: block;
+              display: flex;
               position: relative;
               margin-left: auto;
               margin-right: 1rem;
@@ -258,9 +289,19 @@ footer {
               }
             }
             & ul {
-              display: none;
-              background-color: aqua;
+              text-align: center;
+              z-index: 200;
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              background-color: #333;
               gap: 1rem;
+              overflow-y: hidden;
+              right:0;
+              top:100%;
+              width: 66%;
+              height: 0;
+              transition: all 1s ease;
               & li {
                 width: 100%;
                 & a {
@@ -274,16 +315,24 @@ footer {
         }
     }
   }
+
+  main {
+    & .main-content {
+      & #container {
+        width: 100%;
+      }
+    }
+  }
 }
 
 
 .fancy {
-  --offset: 2px;
+  --offset: 3px;
   background: rgb(55, 21, 90);
   border-radius: 8px;
   position: relative;
-  /* height: 75px; */
-  /* width: 400px; */
+  /* height: 75px;
+  width: 400px; */
   max-width: 100%;
   overflow: hidden;
 }
@@ -303,8 +352,8 @@ footer {
 
 /* Overlay */
 .fancy::after {
-  content: 'Bouton';
-  color: white;
+  content: '';
+  /* color: white; */
   background: inherit;
   border-radius: inherit;
   position: absolute;
@@ -317,10 +366,10 @@ footer {
 
 @keyframes rotate {
   from {
-      transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+      transform: translate(-50%, -50%) scale(14) rotate(0turn);
   }
 
   to {
-      transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+      transform: translate(-50%, -50%) scale(14) rotate(1turn);
   }
 }
