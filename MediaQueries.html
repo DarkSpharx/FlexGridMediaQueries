@@ -1,39 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Queries</title>
     <link rel="stylesheet" href="MediaQueries.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
+
   <body>
-    <header>HEADER</header>
+    <header>
+      <div class="flex">
+        <a href="#hero">Le Dev'</a>
+        <nav>
+          <input type="checkbox" id="burgermenu" />
+          <div id="menu-mobile">
+            <label for="burgermenu">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </label>
+          </div>
+          <ul id="menu">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#projet">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <main>
       <div class="main-content">
-        <h1>Ma vie de Dev'</h1>
+        <h1 id="h1">Ma vie de Dev'</h1>
         <div id="container">
           <div class="image"></div>
           <div class="content">
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              tempore numquam deleniti soluta a. Id, laudantium! In corporis
-              ipsa illum, eum ducimus voluptatibus minima ut totam, aperiam
-              voluptatem quas at illo reiciendis deleniti, placeat temporibus
-              similique. Ipsa, incidunt recusandae! Repellendus ullam suscipit,
-              quos cumque incidunt aperiam illo beatae velit vitae. Magnam ab
-              quas consequatur, aliquid hic minus reiciendis culpa magni
-              provident accusantium expedita quaerat earum, quos facere quae
-              maxime iste placeat praesentium ratione, recusandae ipsum esse
-              unde vel. Adipisci cupiditate beatae incidunt quae aliquam
-              nostrum, pariatur tempore veniam facere quam nam laboriosam
-              delectus iste dolorem? Autem quam repellendus velit culpa.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate perferendis tempora, est minima rerum hic labore
+              pariatur nisi accusamus. Qui accusantium error ipsa harum commodi
+              possimus dignissimos provident molestiae porro!
             </p>
-            <button><a href="#">bouton</a></button>
+            <button class="fancy"><a href="#">Bouton</a></button>
           </div>
         </div>
       </div>
-      <aside>Aside</aside>
+      <aside>
+        Aside
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. In cum quia
+          quis placeat! Facilis adipisci maxime distinctio voluptate dolores ad
+          suscipit aspernatur totam quaerat ipsa, doloremque odit alias aperiam
+          perspiciatis.
+        </p>
+      </aside>
     </main>
-    <footer>FOOTER</footer>
+
+    <footer>
+      <div id="footer-content">
+        <a href="#">
+          <i class="fab fa-facebook-square fa-2xl"></i>
+        </a>
+        <p>© 2025 Le Dev'</p>
+        <a href="mailto:votreadresse@mail.fr">
+          <i class="fa-solid fa-envelope fa-2xl"></i>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
