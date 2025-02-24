@@ -17,7 +17,7 @@ img {
 }
 
 header {
-  min-height: 8vh;
+  /* min-height: 8vh; */
   background-color: #333;
   color: #fff;
   width: 100%;
@@ -179,39 +179,105 @@ main {
 }
 
 footer {
+  width: 100%;
   background-color: #333;
-  color: #fff;
-  text-align: center;
-  min-height: 8vh; 
-  display: flex;
-  align-items: center;
+  min-height: 33vh;
+  align-content: center;
   justify-content: center;
-  text-align: center;
-  & #footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  & .grid-areas {
+    width: 90%;
     padding: 1rem;
-    & a {
-      color: white;
-      text-decoration: none;
+    display: grid;
+    grid-template-areas:
+      "a b c "
+      "d d d ";
+    gap: 1rem;
+    margin: auto;
+
+    & .footer-logo {
+      display: flex;
+      align-items: center;
+      grid-area: a;
+      /* border: red solid 2px; */
+      & img {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        border-radius: 100%;
+        cursor: pointer;
+        border: aqua 2px solid;
+      }
+      & img:hover {
+        opacity: 0.66;
+      }
+      & a {
+        font-family: "Pixelify Sans", serif;
+        color: aqua;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      & a:hover {
+        color: white;
+      }
     }
-    & a:hover {
-      color: aqua;
+    & .footer-nav {
+      grid-area: b;
+      /* border: red solid 2px; */
+      & ul {
+        list-style: none;
+        & a {
+          color: white;
+          text-decoration: none;
+          font-size: 0.8rem;
+        }
+        & a:hover {
+          color: aqua;
+        }
+      } 
     }
-    & p {
-      font-size: 1rem;
-      color: white;
+    
+    & .footer-contact {
+      grid-area: c;
+      /* border: red 2px  solid; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: end;
+      & a {
+        color: white;
+        & .fa-2xl {
+          border-radius: 0;
+        }
+      }
+      & a:hover {
+        color: aqua;
+      }
+    }
+    
+    & .footer-copyright {
+      grid-area: d;
+      /* border: red 2px solid; */
+      text-align: center;
+      & hr {
+        margin: 1rem 0;
+      }
+      & p {
+        font-size: 0.8rem;
+        color: white;
+      }
+    }
   }
 }
-}
 
-/* mode mobile */
+/* mode tablette */
 @media only screen and (max-width:768px) {
   main {
     flex-direction: column;
     width: 100%;
+    max-width: 76;
 
     & .main-content {
       width: 100%;
@@ -225,8 +291,52 @@ footer {
       width: 100%;
     }
   }
+
+  footer {
+    & .grid-areas {
+      display: grid;
+      grid-template-areas:
+        "d"
+        "a"
+        "c"
+        "b";
+      & .footer-logo {
+        grid-area: a;
+        display: flex;
+        justify-content: center;
+        }
+      & .footer-nav {
+        grid-area: b;
+        & ul {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+        } 
+      }
+      
+      & .footer-contact {
+        grid-area: c;
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        justify-content: space-evenly;
+        }
+      
+      & .footer-copyright {
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+        & hr {
+          display: none;
+        }
+        }
+    }
+  }
 }
 
+/* mode mobile */
 @media only screen and (max-width:600px) {
   header {
     & .flex {
@@ -244,9 +354,9 @@ footer {
               height: 100vh;
               background-color: #333;
               right: 0;
-              top: 82px;
+              /* top: 82px; */
               z-index: 100;
-              height: calc(100vh - 33vh);
+              height: calc(100vh - 100%);
               overflow: hidden;
             }
             & input#burgermenu {
@@ -323,7 +433,52 @@ footer {
       }
     }
   }
+
+  footer {
+    min-height: 50vh;
+    & .grid-areas {
+      display: grid;
+      gap: 2rem;
+      grid-template-areas:
+        "a"
+        "b"
+        "d"
+        "c";
+      & .footer-logo {
+        grid-area: a;
+        }
+  
+      & .footer-nav {
+        grid-area: b;
+        & ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+        } 
+      }
+      
+      & .footer-contact {
+        grid-area: c;
+        justify-content: space-between;
+        }
+      
+      & .footer-copyright {
+        padding: 0rem;
+        & hr {
+          display: flex;
+          width: 100%;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
 }
+
+
+
+
+
+
 
 
 .fancy {
@@ -361,8 +516,6 @@ footer {
   height: calc(100% - 2 * var(--offset));
   width: calc(100% - 2 * var(--offset));
 }
-
-
 
 @keyframes rotate {
   from {
