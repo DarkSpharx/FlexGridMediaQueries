@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
 html {
     background-color: #333;
 }
@@ -9,38 +17,41 @@ body {
 }
 
 ul {
+    width: 100%;
     list-style: none;
     display: flex;
+    justify-content: space-between;
     & li {
-        margin: 1rem;
-        & a {
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: white;
-            position: relative;
-            padding: 1rem;
-        }
-        & a:after {
-            content: "";
-            position: absolute;
-            transform: scaleX(0);
-            width: 100%;
-            height: 100%;
-            color: #333;
-            background-color: yellowgreen;
-            transition: transform 0.25s ease-out;
-            bottom: 0;
-            left: 0;
-        }
-        & a:hover:after {
-            transform: scaleX(1);
-            color: #333;
-            background-color: yellowgreen;
-  
-        }
-        & a:hover {
-          color: #333;
-          background-color: yellowgreen;
-        }
+      padding: 1rem;
+      & a {
+        position: relative;
+        z-index: 0;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: white;
+        position: relative;
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+      }
+      & a:hover {
+        color: #333;
+      }
+      & a::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        transform: scaleX(0);
+        width: 100%;
+        height: 100%;
+        color: #333;
+        background-color: yellowgreen;
+        transition: transform 0.25s ease-out;
+        bottom: 0;
+        left: 0;
+      }
+      & a:hover::before {
+        transform: scaleX(1);
+      }
     }
-}
+  }
