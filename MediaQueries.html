@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <header>
+    <header id="header">
       <div class="flex">
         <img src="./media/logoDev.jpg" alt="logo Dev" />
         <a href="#hero">Le Dev'</a>
@@ -60,41 +60,44 @@
       </div>
     </header>
 
-    <main>
-      <div class="main-content">
-        <h1 id="h1">Ma vie de Dev'</h1>
-        <div id="container">
-          <div class="image fancy"></div>
-          <div class="content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Explicabo, necessitatibus. Sint laudantium blanditiis illum quis
-              aperiam explicabo nisi, maxime magnam fugit eveniet voluptas
-              fugiat iste doloribus pariatur dignissimos quo quod eius fuga
-              officiis iusto deleniti nesciunt! Animi libero quidem facere
-              voluptatem veniam consequatur sed minima accusamus fugit
-              distinctio, voluptatum maxime, quae saepe dolorem eveniet
-              inventore officia nulla quas dolores. Dolorem voluptatem minus
-              pariatur repudiandae numquam, cum totam officiis incidunt
-              excepturi ducimus perferendis dolorum corporis quod ipsum quae
-              culpa ex consequatur. Porro, beatae, nesciunt minus quod quos
-              dolores ullam aut praesentium similique tenetur quas maxime et.
-              Odio quaerat officia provident reiciendis?
-            </p>
-            <button type="button">Bouton</button>
-            <!-- <input class="fancy" type="button" placeholder="bouton" /> -->
+    <main id="main">
+      <section class="home">
+        <div class="main-content">
+          <h1 id="h1">Ma vie de Dev'</h1>
+          <div id="container">
+            <div class="image fancy"></div>
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Explicabo, necessitatibus. Sint laudantium blanditiis illum quis
+                aperiam explicabo nisi, maxime magnam fugit eveniet voluptas
+                fugiat iste doloribus pariatur dignissimos quo quod eius fuga
+                officiis iusto deleniti nesciunt! Animi libero quidem facere
+                voluptatem veniam consequatur sed minima accusamus fugit
+                distinctio, voluptatum maxime, quae saepe dolorem eveniet
+                inventore officia nulla quas dolores. Dolorem voluptatem minus
+                pariatur repudiandae numquam, cum totam officiis incidunt
+                excepturi ducimus perferendis dolorum corporis quod ipsum quae
+                culpa ex consequatur. Porro, beatae, nesciunt minus quod quos
+                dolores ullam aut praesentium similique tenetur quas maxime et.
+                Odio quaerat officia provident reiciendis?
+              </p>
+              <button type="button">Bouton</button>
+              <!-- <input class="fancy" type="button" placeholder="bouton" /> -->
+            </div>
           </div>
         </div>
-      </div>
-      <aside>
-        <h2 id="h2">Aside</h2>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
-          ratione minima illum odio. Soluta odio sed molestias velit
-          consequuntur enim totam quos sit repellat ut, obcaecati error debitis
-          atque voluptates.
-        </p>
-      </aside>
+
+        <aside>
+          <h2 id="h2">Aside</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Consequatur ratione minima illum odio. Soluta odio sed molestias
+            velit consequuntur enim totam quos sit repellat ut, obcaecati error
+            debitis atque voluptates.
+          </p>
+        </aside>
+      </section>
     </main>
 
     <footer>
@@ -111,33 +114,47 @@
             <li><a href="#projet">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#mentions">Mentions légales</a></li>
-            <li>
-              <a href="#politique"
-                >Politique de cookies et de traitements des données</a
-              >
-            </li>
+            <li><a href="#politique">Politique de confidentialité</a></li>
+            <li><a href="cookies">Gestion des cookies</a></li>
           </ul>
         </div>
 
         <div class="footer-contact 03">
-          <a href="mailto:votreadresse@mail.be">
-            <i class="fa-regular fa-at fa-2xl"></i>
+          <a href="mailto:votreadresse@mail.be" target="_blank">
+            <i class="fa-regular fa-at"></i>
           </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <i class="fab fa-facebook-square fa-2xl"></i>
-          </a>
+          <a href="https://github.com/" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
           <a href="https://www.linkedin.com" target="_blank">
-            <i class="fa-brands fa-linkedin fa-2xl text-white"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
+          <a href="https://www.behance.net/" target="_blank"
+            ><i class="fa-brands fa-behance"></i
+          ></a>
+          <a href="https://www.facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://bsky.app/" target="_blank"
+            ><i class="fa-brands fa-bluesky"></i
+          ></a>
         </div>
 
         <div class="footer-copyright 04">
           <hr />
 
-          <p>© 2025 Le Dev'</p>
+          <p>
+            <span>Le Dev' &copy; 2025 Tous droits réservés</span>
+            <span
+              >Propulsé avec 💚 par
+              <a href="https://www.frederic-arnould.com/" target="_blank"
+                >Frédéric ARNOULD</a
+              ></span
+            >
+          </p>
         </div>
       </div>
     </footer>
   </body>
-  <script src="./script.js"></script>
+  <!-- <script src="./script.js"></script> -->
 </html>
